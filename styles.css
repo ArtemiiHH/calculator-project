@@ -17,14 +17,17 @@ body {
   height: 500px;
   width: 400px;
   border: solid 2px white;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
+  padding: 30px;
 }
 
 .display {
   height: 100px;
   width: auto;
   border: solid 2px white;
+  border-radius: 30px;
 }
 
 .button-box {
@@ -34,32 +37,33 @@ body {
 }
 
 .button-box button {
-    flex: 1 0 25%;
-    height: 20%;
-    box-sizing: border-box;
+  flex: 1 0 25%;
+  height: 20%;
+  box-sizing: border-box;
 
-    background-color: black;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 0;
-    border: solid 2px white;
+  background-color: black;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0;
+  border: solid 2px white;
+  border-radius: 50px;
 }
 
 .button-box button:hover {
-    flex: 1 0 25%;
-    height: 20%;
-    box-sizing: border-box;
+  flex: 1 0 25%;
+  height: 20%;
+  box-sizing: border-box;
 
-    background-color: white;
-    color: black;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 0;
-    border: solid 2px white;
+  background-color: white;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0;
+  border: solid 2px white;
+  border-radius: 50px;
 }
 
 .button-box button:last-child {
   flex: 1 0 50%;
 }
-
