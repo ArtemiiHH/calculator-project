@@ -37,6 +37,8 @@ body {
 
 .display h2 {
     padding: 20px;
+    font-size: 4rem;
+    font-weight: 300;
 }
 
 .button-box {
