@@ -26,10 +26,18 @@ body {
 }
 
 .button-box {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
 }
 
+.button-box button:last-child {
+    display: grid;
+    grid-column: span 2;
+}
+
+
 button {
-    padding: 30px;
+    padding: 40px;
 }
