@@ -9,7 +9,6 @@ const buttons = document.querySelectorAll('.button-box button');
 let num1 = '';
 let num2 = '';
 let operator = '';
-let resetDisplay = false;
 
 // Get all buttons (NodeList)
 buttons.forEach(btn => {
@@ -20,8 +19,8 @@ buttons.forEach(btn => {
         
         if (value >= 0 && value <= 9) display.textContent = `${value}`;
 
-        if (rawValue === '=') operate();
-        if (rawValue === 'C') display.style = '';
+        if (rawValue === '=') display.textContent = `${operate()}`;
+        if (rawValue === 'C') display.textContent = '0';
     });
 });
 
