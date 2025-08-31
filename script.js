@@ -17,28 +17,32 @@ buttons.forEach(btn => {
     btn.addEventListener('click', () => {
         const value = btn.textContent;
 
-
+        if (value === '=') operate();
+        if (value === 'C') display.style = '';
     });
 });
 
 const operate = (num1, num2, operator) => {
-    if () {};
+    if (operator === '+') add(num1, num2);
+    if (operator === '-') subtract(num1, num2);
+    if (operator === 'x') multiply(num1, num2);
+    if (operator === '/') divide(num1, num2);
 };
 
 // Operation functions
-const add = () => {
-    return num1 + num2;
+const add = (a, b) => {
+    return a + b;
 };
 
-const subtract = () => {
-    return num1 - num2;
+const subtract = (a, b) => {
+    return a - b;
 };
 
-const multiply = () => {
-    return num1 * num2;
+const multiply = (a, b) => {
+    return a * b;
 };
 
-const divide = () => {
-    return num1 / num2;
+const divide = (a, b) => {
+    return a / b;
 };
 
