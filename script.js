@@ -30,6 +30,7 @@ buttons.forEach(btn => {
 
         // Number buttons
         if (!isNaN(rawValue) || rawValue === '.') {
+            // Return if dot is pressed more than once
             if (rawValue === '.' && currentInput.includes('.')) {
                 return;
             }
