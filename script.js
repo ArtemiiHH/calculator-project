@@ -11,13 +11,21 @@ const num2 = 0;
 const operator = '';
 
 // Operation functions
-const add = () => {};
+const add = () => {
+    return num1 + num2;
+};
 
-const subtract = () => {};
+const subtract = () => {
+    return num1 - num2;
+};
 
-const multiply = () => {};
+const multiply = () => {
+    return num1 * num2;
+};
 
-const divide = () => {};
+const divide = () => {
+    return num1 / num2;
+};
 
 // Get all buttons (NodeList)
 buttons.forEach(btn => {
