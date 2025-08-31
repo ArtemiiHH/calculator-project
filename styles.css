@@ -3,7 +3,7 @@ body {
   margin: 0 auto;
   color: white;
   background-color: black;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 #container {
@@ -33,12 +33,9 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
-
-.display h2 {
-    padding: 20px;
-    font-size: 4rem;
-    font-weight: 300;
+  padding-right: 20px;
+  font-size: 4rem;
+  font-weight: 300;
 }
 
 .button-box {
