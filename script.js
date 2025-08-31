@@ -6,14 +6,15 @@
 const display = document.querySelector('.display');
 const buttons = document.querySelectorAll('.button-box button');
 
+let num1 = '';
+let num2 = '';
+let operator = '';
+
+
 // Get all buttons (NodeList)
 buttons.forEach(btn => {
     // Button actions
     btn.addEventListener('click', () => {
-        let num1 = '';
-        let num2 = '';
-        let operator = '';
-        
         // Raw button string
         const rawValue = btn.textContent;
         // Convert string to number
@@ -23,7 +24,7 @@ buttons.forEach(btn => {
         if (!isNaN(rawValue) && value >= 0 && value <= 9 && display.textContent === '0') {
             display.textContent = `${rawValue}`;
         } else {
-            display.textContent += `${value}`
+            display.textContent += `${rawValue}`
         };
         // If operator pressed...
         if (rawValue === '+' || rawValue === '-' || rawValue === 'x' || rawValue === '/') {
@@ -35,7 +36,7 @@ buttons.forEach(btn => {
         if (rawValue === '=') {
             num2 = Number(display.textContent);
             display.textContent = `0`;
-            display.textContent = `${operate(num1, num2, operator)}`;
+            display.textContent = operate(num1, num2, operator);
         };
         // If 'C' pressed, clear display
         if (rawValue === 'C') {
@@ -43,6 +44,7 @@ buttons.forEach(btn => {
             num1 = '';
             num2 = '';
             operator = '';
+            return;
         };
     });
 });
@@ -55,19 +57,11 @@ const operate = (num1, num2, operator) => {
 };
 
 // Operation functions
-const add = (a, b) => {
-    return a + b;
-};
+const add = (a, b) => a + b;
 
-const subtract = (a, b) => {
-    return a - b;
-};
+const subtract = (a, b) => a - b;
 
-const multiply = (a, b) => {
-    return a * b;
-};
+const multiply = (a, b) => a * b;
 
-const divide = (a, b) => {
-    return a / b;
-};
+const divide = (a, b) => a / b;
 
