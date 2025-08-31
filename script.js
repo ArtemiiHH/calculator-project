@@ -18,13 +18,18 @@ buttons.forEach(btn => {
         // Raw button string
         const rawValue = btn.textContent;
 
+        // Return if more than 9 digits in input
+        if (currentInput.length >= 9 && !isNaN(rawValue)) {
+            return;
+        }
+
         // Clear button
         if (rawValue === 'C') {
             display.textContent = '0';
             num1 = '';
             num2 = '';
             operator = '';
-            currentInput = '0';
+            currentInput = '0';122
             return;
         }
 
@@ -70,6 +75,7 @@ buttons.forEach(btn => {
     });
 });
 
+// Operations
 const operate = (num1, num2, operator) => {
     if (operator === '+') return add(num1, num2);
     if (operator === '-') return subtract(num1, num2);
