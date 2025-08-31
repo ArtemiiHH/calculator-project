@@ -21,8 +21,14 @@ buttons.forEach(btn => {
         } else {
             display.textContent += `${rawValue}`
         };
+        // 
+        if (rawValue === '+' || rawValue === '-' || rawValue === 'x' || rawValue === '/') {
+            num1 = Number(display.textContent);
+            operator = rawValue;
+            display.textContent = `${num1}`;
+        };
         // If '=' pressed, run operations
-        if (rawValue === '=') display.textContent = `${operate()}`;
+        if (rawValue === '=') display.textContent = `${operate(value)}`;
         // If 'C' pressed, clear display
         if (rawValue === 'C') display.textContent = '0';
     });
