@@ -20,31 +20,34 @@ buttons.forEach(btn => {
         // Convert string to number
         const value = Number(rawValue);
 
-        // If 0-9 pressed, replace 0 in display
-        if (!isNaN(rawValue) && value >= 0 && value <= 9 && display.textContent === '0') {
-            display.textContent = `${rawValue}`;
-        } else {
-            display.textContent += `${rawValue}`
-        };
-        // If operator pressed...
-        if (rawValue === '+' || rawValue === '-' || rawValue === 'x' || rawValue === '/') {
-            num1 = Number(display.textContent);
-            operator = rawValue;
-            display.textContent = `0`;
-        };
-        // If '=' pressed, run operations
-        if (rawValue === '=') {
-            num2 = Number(display.textContent);
-            display.textContent = `0`;
-            display.textContent = operate(num1, num2, operator);
-        };
-        // If 'C' pressed, clear display
+        // Clear button
         if (rawValue === 'C') {
             display.textContent = '0';
             num1 = '';
             num2 = '';
             operator = '';
             return;
+        }
+
+        // Number buttons
+        if (!isNaN(rawValue) && value >= 0 && value <= 9 && display.textContent === '0') {
+            display.textContent = `${rawValue}`;
+        } else {
+            display.textContent += `${rawValue}`
+        }
+
+        // Operator buttons
+        if (rawValue === '+' || rawValue === '-' || rawValue === 'x' || rawValue === '/') {
+            num1 = Number(display.textContent);
+            operator = rawValue;
+            display.textContent = `0`;
+        }
+
+        // Equals button
+        if (rawValue === '=') {
+            num2 = Number(display.textContent);
+            display.textContent = `0`;
+            display.textContent = operate(num1, num2, operator);
         };
     });
 });
