@@ -10,15 +10,20 @@ const buttons = document.querySelectorAll('.button-box button');
 buttons.forEach(btn => {
     // Button actions
     btn.addEventListener('click', () => {
+        // Raw button string
         const rawValue = btn.textContent;
+        // Convert string to number
         const value = Number(rawValue);
 
+        // If 0-9 pressed, replace 0 in display
         if (rawValue >= 0 && rawValue <= 9 && display.textContent === '0') {
             display.textContent = `${rawValue}`;
         } else {
             display.textContent += `${rawValue}`
         };
+        // If '=' pressed, run operations
         if (rawValue === '=') display.textContent = `${operate()}`;
+        // If 'C' pressed, clear display
         if (rawValue === 'C') display.textContent = '0';
     });
 });
