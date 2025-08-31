@@ -30,6 +30,9 @@ buttons.forEach(btn => {
 
         // Number buttons
         if (!isNaN(rawValue) || rawValue === '.') {
+            if (rawValue === '.' && currentInput.includes('.')) {
+                return;
+            }
             if (currentInput === '0' && rawValue !== '.') {
                 currentInput = rawValue;
             } else {
