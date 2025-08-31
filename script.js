@@ -15,10 +15,13 @@ let resetDisplay = false;
 buttons.forEach(btn => {
     // Button actions
     btn.addEventListener('click', () => {
-        const value = btn.textContent;
+        const rawValue = btn.textContent;
+        const value = Number(rawValue);
+        
+        if (value >= 0 && value <= 9) display.textContent = `${value}`;
 
-        if (value === '=') operate();
-        if (value === 'C') display.style = '';
+        if (rawValue === '=') operate();
+        if (rawValue === 'C') display.style = '';
     });
 });
 
