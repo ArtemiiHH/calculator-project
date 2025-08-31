@@ -70,6 +70,11 @@ body {
   border-radius: 50px;
 }
 
+.button-box button:first-child {
+    flex: 1 0 75%;
+    background-color: rgb(243, 24, 24);
+}
+
 .button-box button:last-child {
   flex: 1 0 50%;
 }
