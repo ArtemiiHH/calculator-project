@@ -10,27 +10,40 @@ const buttons = document.querySelectorAll('.button-box button');
 buttons.forEach(btn => {
     // Button actions
     btn.addEventListener('click', () => {
+        let num1 = '';
+        let num2 = '';
+        let operator = '';
+        
         // Raw button string
         const rawValue = btn.textContent;
         // Convert string to number
         const value = Number(rawValue);
 
         // If 0-9 pressed, replace 0 in display
-        if (rawValue >= 0 && rawValue <= 9 && display.textContent === '0') {
+        if (!isNaN(rawValue) && value >= 0 && value <= 9 && display.textContent === '0') {
             display.textContent = `${rawValue}`;
         } else {
-            display.textContent += `${rawValue}`
+            display.textContent += `${value}`
         };
-        // 
+        // If operator pressed...
         if (rawValue === '+' || rawValue === '-' || rawValue === 'x' || rawValue === '/') {
             num1 = Number(display.textContent);
             operator = rawValue;
-            display.textContent = `${num1}`;
+            display.textContent = `0`;
         };
         // If '=' pressed, run operations
-        if (rawValue === '=') display.textContent = `${operate(value)}`;
+        if (rawValue === '=') {
+            num2 = Number(display.textContent);
+            display.textContent = `0`;
+            display.textContent = `${operate(num1, num2, operator)}`;
+        };
         // If 'C' pressed, clear display
-        if (rawValue === 'C') display.textContent = '0';
+        if (rawValue === 'C') {
+            display.textContent = '0';
+            num1 = '';
+            num2 = '';
+            operator = '';
+        };
     });
 });
 
