@@ -6,9 +6,10 @@
 const display = document.querySelector('.display');
 const buttons = document.querySelectorAll('.button-box button');
 
-const num1 = 0;
-const num2 = 0;
-const operator = '';
+let num1 = '';
+let num2 = '';
+let operator = '';
+let resetDisplay = false;
 
 // Get all buttons (NodeList)
 buttons.forEach(btn => {
