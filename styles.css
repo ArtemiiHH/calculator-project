@@ -14,6 +14,7 @@ body {
   width: 100vw;
 }
 
+/* Calculator Box */
 .calculator {
   height: 600px;
   width: 400px;
@@ -34,6 +35,7 @@ body {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+/* Display Grid */
 .display {
   height: 100px;
   width: auto;
@@ -47,6 +49,7 @@ body {
   background-color: rgb(20, 20, 20);
 }
 
+/* Button Grid */
 .button-box {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -55,6 +58,7 @@ body {
   flex: 1;
 }
 
+/* All buttons */
 .button-box button {
   border-radius: 50%;
   width: 100%;
@@ -66,6 +70,7 @@ body {
   border: none;
 }
 
+/* All buttons hover */
 .button-box button:hover {
   border-radius: 50%;
   width: 100%;
@@ -79,11 +84,13 @@ body {
   border-radius: 50%;
 }
 
+/* Clear button */
 .button-box button:first-child {
   grid-column: span 3;
   border-radius: 30px;
 }
 
+/* Equals button */
 .button-box button:last-child {
   grid-column: span 2;
   border-radius: 30px;
