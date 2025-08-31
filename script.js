@@ -23,6 +23,8 @@ const divide = () => {};
 buttons.forEach(btn => {
     // Button actions
     btn.addEventListener('click', () => {
+        const value = btn.textContent;
         
+
     });
 });
